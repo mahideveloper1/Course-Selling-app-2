@@ -55,7 +55,7 @@ function Course() {
 }
 
 function GrayTopper() {
-  const title = useRecoilValue(courseTitle); //subscribed
+  const title = useRecoilValue(courseTitle);
   return (
     <div
       style={{
