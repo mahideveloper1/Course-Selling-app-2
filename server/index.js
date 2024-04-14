@@ -12,22 +12,10 @@ app.use(express.json());
 app.use("/admin", adminRouter);
 app.use("/user", userRouter);
 
-// mongoose.connect(
-//   "mongodb+srv://mahesh:4321dcba@cluster0.fgxlmxt.mongodb.net/",
-//   {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//     dbName: "cluster0",
-//   }
-// );
-
 mongoose
-  .connect(
-    "mongodb+srv://mahesh:4321dcba@cluster0.fgxlmxt.mongodb.net", // added database name to connection string
-    {
-      dbName: "cluster0", // removed deprecated options
-    }
-  )
+  .connect("mongodb+srv://mahesh:4321dcba@cluster0.fgxlmxt.mongodb.net", {
+    dbName: "cluster0",
+  })
   .then(() => {
     console.log("Connected to MongoDB");
   })
