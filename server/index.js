@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -12,8 +13,10 @@ app.use(express.json());
 app.use("/admin", adminRouter);
 app.use("/user", userRouter);
 
+const dbUrl = process.env.DB_URL;
+
 mongoose
-  .connect("mongodb+srv://mahesh:4321dcba@cluster0.fgxlmxt.mongodb.net", {
+  .connect(dbUrl, {
     dbName: "cluster0",
   })
   .then(() => {
@@ -23,4 +26,4 @@ mongoose
     console.error("Error connecting to MongoDB:", error);
   });
 
-app.listen(3000, () => console.log("Server running on port 3000"));
+app.listen(process.env.PORT, () => console.log("Server running successfully"));
