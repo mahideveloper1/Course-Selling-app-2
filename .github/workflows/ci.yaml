@@ -1,0 +1,23 @@
+name: Deploy
+
+on:
+   push:
+     branches:
+        - main
+
+ jobs:
+   deploy:
+      runs-on: ubuntu-latest #machine on github
+
+      steps:
+      -name: Checkout code
+       uses: actions/checkout@v2  
+
+      -name: SSH and deploy
+       env: 
+          SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}
+       run:
+         echo "$SSH_PRIVATE_KEY" > keyfile
+         icacls D:\Fullstack\mahiapp\course-app.pem /inheritance:r 
+         icacls D:\Fullstack\mahiapp\course-app.pem /grant:r "mahes:R"
+         ssh -t -i "course-app.pem" ubuntu@ec2-3-25-217-247.ap-southeast-2.compute.amazonaws.com "sudo bash ~/deplo
