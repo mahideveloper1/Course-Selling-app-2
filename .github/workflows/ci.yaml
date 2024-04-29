@@ -18,8 +18,8 @@ on:
           SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}
         run:
          echo "$SSH_PRIVATE_KEY" > keyfile
-         icacls D:\Fullstack\mahiapp\course-app.pem /inheritance:r 
-         icacls D:\Fullstack\mahiapp\course-app.pem /grant:r "mahes:R"
+         icacls keyfile /inheritance:r 
+         icacls keyfile /grant:r "mahes:R"
          # chmod 600 keyfile
          mkdir -p ~/.ssh
          cp known_hosts ~/.ssh/known_hosts
