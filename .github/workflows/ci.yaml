@@ -23,4 +23,4 @@ on:
          chmod 600 keyfile
          mkdir -p ~/.ssh
          cp known_hosts ~/.ssh/known_hosts
-         ssh -t -i "course-app.pem" ubuntu@ec2-3-25-217-247.ap-southeast-2.compute.amazonaws.com "sudo bash ~/deplo
+         ssh -t -i "course-app.pem" ubuntu@ec2-3-25-217-247.ap-southeast-2.compute.amazonaws.com "sudo bash ~/deploy.sh"
