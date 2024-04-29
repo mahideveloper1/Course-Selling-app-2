@@ -12,6 +12,7 @@ app.use(express.json());
 
 app.use("/admin", adminRouter);
 app.use("/user", userRouter);
+app.get("/", (req, res) => res.json({ msg: "server is running" }));
 
 const dbUrl = process.env.DB_URL;
 
