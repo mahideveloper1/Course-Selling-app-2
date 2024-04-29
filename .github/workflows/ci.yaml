@@ -17,10 +17,11 @@ on:
         env: 
           SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}
         run:
+         # all this code run on github server
          echo "$SSH_PRIVATE_KEY" > keyfile
-         icacls keyfile /inheritance:r 
-         icacls keyfile /grant:r "mahes:R"
-         # chmod 600 keyfile
+         # icacls keyfile /inheritance:r 
+         # icacls keyfile /grant:r "mahes:R"
+         chmod 600 keyfile
          mkdir -p ~/.ssh
          cp known_hosts ~/.ssh/known_hosts
          ssh -t -i keyfile ubuntu@ec2-3-25-217-247.ap-southeast-2.compute.amazonaws.com "sudo bash ~/deploy.sh"
