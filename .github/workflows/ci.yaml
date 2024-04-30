@@ -1,25 +1,25 @@
 name: Deploy
 
 on:
-   push:
-     branches:
-        - main
+  push:
+    branches:
+      - main
 
- jobs:
-   deploy:
-      runs-on: ubuntu-latest #machine on github
+jobs:
+  deploy:
+    runs-on: ubuntu-latest #machine on github
 
-      steps:
-      -name: Checkout code
-       uses: actions/checkout@v2  
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-      -name: SSH and deploy
-        env: 
+      - name: SSH and deploy
+        env:
           SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}
         run:
-         # all this code run on github server
-         echo "$SSH_PRIVATE_KEY" > keyfile
-         chmod 600 keyfile
-         mkdir -p ~/.ssh
-         cp known_hosts ~/.ssh/known_hosts
-         ssh -t -i keyfile ubuntu@ec2-3-25-217-247.ap-southeast-2.compute.amazonaws.com "sudo bash ~/deploy.sh"
+          # all this code run on github server
+          echo "$SSH_PRIVATE_KEY" > keyfile
+          chmod 600 keyfile
+          mkdir -p ~/.ssh
+          cp known_hosts ~/.ssh/known_hosts
+          ssh -t -i keyfile ubuntu@ec2-3-25-217-247.ap-southeast-2.compute.amazonaws.com "sudo bash ~/deploy.sh"
