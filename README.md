@@ -44,24 +44,25 @@ Create a `.env` file in the `backend` directory and add the following environmen
    ```
 
 2. Navigate to the project directory:
-   cd course-selling-platform
+
+- cd course-selling-platform
 
 3. Install dependencies for both frontend and backend:
 
-cd frontend
-npm install
-cd ../backend
-npm install
+- cd frontend
+- npm install
+- cd ../backend
+- npm install
 
 4. Start the backend server:
 
-cd ../backend
-node index.js
+- cd ../backend
+- node index.js
 
 5. In a separate terminal, start the frontend:
 
-cd ../frontend
-npm run dev
+- cd ../frontend
+- npm run dev
 
 # CONTRIBUTIONS
 
