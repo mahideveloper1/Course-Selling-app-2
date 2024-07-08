@@ -1,0 +1,70 @@
+.appbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Center items vertically */
+  padding: 8px;
+  z-index: 1;
+}
+
+.logo {
+  cursor: pointer;
+  display: flex;
+  align-items: center; /* Center logo vertically */
+}
+
+.logo-text {
+  display: block;
+}
+
+.buttons-container {
+  display: flex;
+  align-items: center; /* Center buttons vertically */
+}
+
+.buttons-container button {
+  margin-right: 10px;
+  font-size: 1rem; /* Default font size */
+  padding: 8px 16px; /* Default padding */
+}
+
+@media (max-width: 768px) {
+  .buttons-container button {
+    font-size: 0.9rem; /* Decrease font size for medium screens */
+    padding: 6px 12px; /* Decrease padding for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .buttons-container button {
+    font-size: 0.9rem; /* Decrease font size for medium screens */
+    padding: 6px 12px; /* Decrease padding for medium screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .buttons-container button {
+    font-size: 0.8rem; /* Further decrease font size for small screens */
+    padding: 4px 8px; /* Further decrease padding for small screens */
+  }
+}
+
+@media (max-width: 470px) {
+  .logo-text {
+    display: none; /* Hide logo text on small screens */
+  }
+
+  .appbar {
+    justify-content: center; /* Center the entire navbar */
+  }
+
+  .buttons-container {
+    justify-content: center; /* Center buttons horizontally */
+    width: 100%;
+  }
+
+  .buttons-container button {
+    margin-right: 5px; /* Adjust spacing for smaller screens */
+    font-size: 0.8rem; /* Further decrease font size for small screens */
+    padding: 4px 8px; /* Further decrease padding for small screens */
+  }
+}

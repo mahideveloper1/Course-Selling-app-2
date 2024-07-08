@@ -3,6 +3,7 @@ import { Card, Typography, Button, TextField } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { BASE_URL } from "../config.js";
 import axios from "axios";
+import "./Courses.css";
 
 function Courses() {
   const [courses, setCourses] = useState([]);
@@ -36,20 +37,16 @@ function Courses() {
 
   return (
     <div>
-      <TextField
-        label="Search Courses"
-        variant="outlined"
-        value={searchKeyword}
-        onChange={handleSearchInputChange}
-        style={{ marginBottom: 20, width: "50%", marginLeft: 380 }}
-      />
-      <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "center",
-        }}
-      >
+      <div className="search-container">
+        <TextField
+          label="Search Courses"
+          variant="outlined"
+          value={searchKeyword}
+          onChange={handleSearchInputChange}
+          className="search-box"
+        />
+      </div>
+      <div className="course-container">
         {filteredCourses.map((course) => (
           <Course key={course._id} course={course} />
         ))}
@@ -62,21 +59,14 @@ export function Course({ course }) {
   const navigate = useNavigate();
 
   return (
-    <Card
-      style={{
-        margin: 10,
-        width: 300,
-        minHeight: 200,
-        padding: 20,
-      }}
-    >
+    <Card className="course-card">
       <Typography textAlign={"center"} variant="h5">
         {course.title}
       </Typography>
       <Typography textAlign={"center"} variant="subtitle1">
         {course.description}
       </Typography>
-      <img src={course.imageLink} style={{ width: 300 }} alt={course.title} />
+      <img src={course.imageLink} alt={course.title} />
       <div
         style={{
           display: "flex",

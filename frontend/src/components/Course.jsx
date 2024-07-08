@@ -61,10 +61,9 @@ function GrayTopper() {
       style={{
         height: 250,
         background: "#212121",
-        top: 0,
         width: "100vw",
-        zIndex: 0,
         marginBottom: -250,
+        marginTop: -35,
       }}
     >
       <div
