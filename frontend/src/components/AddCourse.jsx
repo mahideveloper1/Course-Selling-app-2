@@ -8,7 +8,6 @@ function AddCourse() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
-  const [courselink, setCourselink] = useState("");
   const [price, setPrice] = useState(0);
 
   return (
@@ -48,7 +47,7 @@ function AddCourse() {
           <TextField
             style={{ marginBottom: 10 }}
             onChange={(e) => {
-              setCourselink(e.target.value);
+              setImage(e.target.value);
             }}
             fullWidth={true}
             label="Course link"

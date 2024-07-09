@@ -4,7 +4,7 @@ import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
 import { useSetRecoilState } from "recoil";
 import { homeState } from "../store/atoms/home.js";
-import "./Home.css";
+import "./styles/Home.css";
 
 const Home = () => {
   const navigate = useNavigate();

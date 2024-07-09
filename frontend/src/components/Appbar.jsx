@@ -5,8 +5,9 @@ import { useSetRecoilState, useRecoilValue } from "recoil";
 import { isUserLoading } from "../store/selectors/isUserLoading";
 import { userState } from "../store/atoms/user.js";
 import { userEmailState } from "../store/selectors/userEmail";
-import "./Appbar.css";
+import "./styles/Appbar.css";
 
+// first we get the data from get request in app.js took the useremail from data set it and based on this cond if useremail then show addcourse , logout option and if not then show the signup , signin option
 function Appbar() {
   const navigate = useNavigate();
   const userLoading = useRecoilValue(isUserLoading);

@@ -3,7 +3,7 @@ import { Card, Typography, Button, TextField } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { BASE_URL } from "../config.js";
 import axios from "axios";
-import "./Courses.css";
+import "./styles/Courses.css";
 
 function Courses() {
   const [courses, setCourses] = useState([]);

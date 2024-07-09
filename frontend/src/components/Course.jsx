@@ -177,6 +177,8 @@ function UpdateCard() {
                   },
                 }
               );
+              alert("Updated course!");
+
               let updatedCourse = {
                 _id: courseDetails.course._id,
                 title: title,
