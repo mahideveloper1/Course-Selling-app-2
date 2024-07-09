@@ -14,7 +14,7 @@ function Appbar() {
   const setUser = useSetRecoilState(userState);
 
   if (userLoading) {
-    return null; // or a loading indicator
+    return null;
   }
 
   const handleLogout = () => {

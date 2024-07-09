@@ -1,7 +1,7 @@
 .appbar {
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Center items vertically */
+  align-items: center;
   padding: 8px;
   z-index: 1;
 }
@@ -9,7 +9,7 @@
 .logo {
   cursor: pointer;
   display: flex;
-  align-items: center; /* Center logo vertically */
+  align-items: center;
 }
 
 .logo-text {
@@ -18,53 +18,53 @@
 
 .buttons-container {
   display: flex;
-  align-items: center; /* Center buttons vertically */
+  align-items: center;
 }
 
 .buttons-container button {
   margin-right: 10px;
-  font-size: 1rem; /* Default font size */
-  padding: 8px 16px; /* Default padding */
+  font-size: 1rem;
+  padding: 8px 16px;
 }
 
 @media (max-width: 768px) {
   .buttons-container button {
-    font-size: 0.9rem; /* Decrease font size for medium screens */
-    padding: 6px 12px; /* Decrease padding for medium screens */
+    font-size: 0.9rem;
+    padding: 6px 12px;
   }
 }
 
 @media (max-width: 768px) {
   .buttons-container button {
-    font-size: 0.9rem; /* Decrease font size for medium screens */
-    padding: 6px 12px; /* Decrease padding for medium screens */
+    font-size: 0.9rem;
+    padding: 6px 12px;
   }
 }
 
 @media (max-width: 600px) {
   .buttons-container button {
-    font-size: 0.8rem; /* Further decrease font size for small screens */
-    padding: 4px 8px; /* Further decrease padding for small screens */
+    font-size: 0.8rem;
+    padding: 4px 8px;
   }
 }
 
 @media (max-width: 470px) {
   .logo-text {
-    display: none; /* Hide logo text on small screens */
+    display: none;
   }
 
   .appbar {
-    justify-content: center; /* Center the entire navbar */
+    justify-content: center;
   }
 
   .buttons-container {
-    justify-content: center; /* Center buttons horizontally */
+    justify-content: center;
     width: 100%;
   }
 
   .buttons-container button {
-    margin-right: 5px; /* Adjust spacing for smaller screens */
-    font-size: 0.8rem; /* Further decrease font size for small screens */
-    padding: 4px 8px; /* Further decrease padding for small screens */
+    margin-right: 5px;
+    font-size: 0.8rem;
+    padding: 4px 8px;
   }
 }

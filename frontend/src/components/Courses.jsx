@@ -58,6 +58,21 @@ function Courses() {
 export function Course({ course }) {
   const navigate = useNavigate();
 
+  const handleViewClick = () => {
+    if (course.imageLink) {
+      const newWindow = window.open(course.imageLink, "_blank");
+      if (
+        !newWindow ||
+        newWindow.closed ||
+        typeof newWindow.closed == "undefined"
+      ) {
+        alert("The link could not be opened. Please update the course.");
+      }
+    } else {
+      alert("No course link present. Please update the course.");
+    }
+  };
+
   return (
     <Card className="course-card">
       <Typography textAlign={"center"} variant="h5">
@@ -66,12 +81,13 @@ export function Course({ course }) {
       <Typography textAlign={"center"} variant="subtitle1">
         {course.description}
       </Typography>
-      <img src={course.imageLink} alt={course.title} />
       <div
         style={{
           display: "flex",
           justifyContent: "center",
-          marginTop: 20,
+          gap: "16px",
+          marginTop: 50,
+          paddingTop: "25px",
         }}
       >
         <Button
@@ -82,6 +98,9 @@ export function Course({ course }) {
           }}
         >
           Edit
+        </Button>
+        <Button variant="contained" size="large" onClick={handleViewClick}>
+          View
         </Button>
       </div>
     </Card>

@@ -8,6 +8,7 @@ function AddCourse() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
+  const [courselink, setCourselink] = useState("");
   const [price, setPrice] = useState(0);
 
   return (
@@ -16,7 +17,6 @@ function AddCourse() {
         display: "flex",
         justifyContent: "center",
         minHeight: "80vh",
-        // justifyContent: "center",
         flexDirection: "column",
       }}
     >
@@ -48,10 +48,10 @@ function AddCourse() {
           <TextField
             style={{ marginBottom: 10 }}
             onChange={(e) => {
-              setImage(e.target.value);
+              setCourselink(e.target.value);
             }}
             fullWidth={true}
-            label="Image link"
+            label="Course link"
             variant="outlined"
           />
 
@@ -75,6 +75,7 @@ function AddCourse() {
                   title: title,
                   description: description,
                   imageLink: image,
+                  courseLink: courselink,
                   published: true,
                   price,
                 },
